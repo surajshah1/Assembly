@@ -17,6 +17,7 @@ evens_and_odds:      ;prologue
   
   mov rax, rcx  ; mov size in to rax
   sub rax, 1    ; rax has size - start from 0
+  mov r8d, 0 
 
 checkLoop:
   mov edx, dword [rdi]	; mov element from source to temp ptr edx 

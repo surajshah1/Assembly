@@ -33,7 +33,7 @@ compute_grey:
  shr edi, 8
  add eax, edi ; ret register eax contains dividend
  
- mov ecx, 0 ; for idiv
+ ;mov ecx, 0 ; for idiv
  mov edi, 3 ; divisor
  idiv edi ; idiv eax/edi
 

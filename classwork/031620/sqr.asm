@@ -11,6 +11,8 @@ sqr_array_asm:      ;prologue
   cmp rsi, 0    ; check the size of the array
   je rexit      ; check 0 or Null
 
+  mov edx, 0
+  mov eax, 0
   mov rcx, rsi   ;mov size in to rcx
   sub rcx, 1    ;rsi has size - start from 0
 

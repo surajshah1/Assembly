@@ -10,20 +10,21 @@ extern "C" uint32_t compute_grey(uint32_t* p);
 //convert this function into assembly
 void gray_scale(Mat* color, Mat* gray) {
 
-for (int r=0; r<color->rows; r++) {
-for (int c=0; c<color->cols; c++) {
-uint32_t* p = (uint32_t*)color->ptr(r,c);
-*gray->ptr(r, c) = compute_grey(p); //(uint8_t) (((*p & 0xff000000) >> 24) + ((*p & 0x00ff0000) >> 16) + ((*p & 0x0000ff00) >> 8))/3 ;
-}
-}
+	for (int r=0; r<color->rows; r++) {
+	for (int c=0; c<color->cols; c++) {
+		uint32_t* p = (uint32_t*)color->ptr(r,c);
+		*gray->ptr(r, c) = compute_grey(p); 
+		//(uint8_t) (((*p & 0xff000000) >> 24) + ((*p & 0x00ff0000) >> 16) + ((*p & 0x0000ff00) >> 8))/3 ;
+	}
+	}
 }
 
 int main( int argc, char** argv )
 {
-if( argc != 2)
-{
-cout <<" Usage: display_image ImageToLoadAndDisplay" << endl;
-return -1;
+	if( argc != 2)
+	{
+	cout <<" Usage: display_image ImageToLoadAndDisplay" << endl;
+	return -1;
 }
 
 Mat image, gray;

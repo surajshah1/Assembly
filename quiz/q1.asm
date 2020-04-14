@@ -15,21 +15,26 @@ evens_and_odds:      ;prologue
   cmp rcx, 0	; check size
   je rexit	; exit
   
+  mov edx, 0
+  mov esi, 0
+  mov eax, 0
+  mov r8d, 0
   mov rax, rcx  ; mov size in to rax
   sub rax, 1    ; rax has size - start from 0
   mov r8d, 0 
-
+; change all registers
+; minimize labels -- reduce jumps -- only keep one
 checkLoop:
   mov edx, dword [rdi]	; mov element from source to temp ptr edx 
-  and edx, 2	; bitwise AND to compute modulo 2
+  and edx, 1	; bitwise AND 1 to check last digit
   cmp edx, 0	; check if the result of this mod is 0 (means it is even)
   jne odd	; jmp not equal if it is not 0
   je even	; jmp equal if it is 0
 
 continueLoop:
   add rdi, 4	; increment
-  sub rax, 1    ; decrement size
-  cmp rax, 0    ; compare with 0
+  sub rcx, 1    ; decrement size
+  cmp rcx, 0    ; compare with 0
   jne checkLoop ; loop until size is 0
   je  rexit	; exit when have iterated through every element 
 

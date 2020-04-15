@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
-//rax //rdi //rsi //rdx //rcx
+//rax 		//rdi	//rsi 	//rdx 			//rcx
 int variance(uint32_t* s, int32_t* t, uint32_t z);
 
 // 10, 7

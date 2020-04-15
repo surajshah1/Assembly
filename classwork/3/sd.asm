@@ -12,7 +12,7 @@ variance:      ;prologue
   cmp rsi, 0    ; check the second array
   je rexit      ; jump to exit
   cmp rdx, 0	; check the size of array
-  re rexit	; jump to exit
+  je rexit	; jump to exit
   
   mov r15, rdi  ; save rdi here -- breakpoint here and check r15  
   mov r8d, 0

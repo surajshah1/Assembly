@@ -14,6 +14,7 @@ int main(int argc, char **argv)
 	if (j < 0)
 		j = j * -1;
 	
+	printf("The original value is: %d \n", i);
 	printf("The absolute value in C is: %d \n", j);
 	printf("THe absolute value in x86 Assembly is: %d \n", k);
 	return 0;

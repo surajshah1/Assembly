@@ -32,7 +32,7 @@ sumLoop:
 ;compute average
   mov eax, r8d          ; mov sum to eax 
   cdq                   ; convert  
-  mov ebx, ecx          ; mov divisor (10) into ebx
+  mov ebx, ecx          ; mov divisor (10) into ebx edx has remainder
   idiv ebx              ; average in eax 
          
   xor r8d, r8d		; clear r8d
